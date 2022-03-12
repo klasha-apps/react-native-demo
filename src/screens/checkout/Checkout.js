@@ -5,6 +5,7 @@ import SimpleBackHeader from '../../components/Header/SimpleBackHeader';
 import RBSheet from "react-native-raw-bottom-sheet";
 import RbSheets from '../../components/List/RbSheet';
 import ImagesPath from '../../common/ImagesPath';
+import Colors from '../../common/Colors';
 
 function Checkout(props) {
   const [deliverymethod, setDeliveryMethod] = useState('doorDelivery');
@@ -56,11 +57,11 @@ function Checkout(props) {
                   height: 20,
                   borderWidth: deliverymethod === 'doorDelivery' ? 3 : 1,
                   borderColor:
-                    deliverymethod === 'doorDelivery' ? 'red' : 'black',
+                    deliverymethod === 'doorDelivery' ? Colors.red : 'black',
                   borderRadius: 50,
                 }}
               />
-              <Text style={styles.txt}>door Delivery</Text>
+              <Text style={styles.txt}>Door delivery</Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.selContainer}
@@ -70,11 +71,11 @@ function Checkout(props) {
                   width: 20,
                   height: 20,
                   borderWidth: deliverymethod === 'pickup' ? 3 : 1,
-                  borderColor: deliverymethod === 'pickup' ? 'red' : 'black',
+                  borderColor: deliverymethod === 'pickup' ? Colors.red : 'black',
                   borderRadius: 50,
                 }}
               />
-              <Text style={styles.txt}>pickup Station</Text>
+              <Text style={styles.txt}>Pickup station</Text>
             </TouchableOpacity>
           </View>
 
@@ -87,15 +88,15 @@ function Checkout(props) {
                 width: 20,
                 height: 20,
                 borderWidth: paymentmethod === 'klasha' ? 3 : 1,
-                borderColor: paymentmethod === 'klasha' ? 'red' : 'black',
+                borderColor: paymentmethod === 'klasha' ? Colors.red : 'black',
                 borderRadius: 50,
               }}
             />
-            <Text style={styles.txt}>Pay with Kasha</Text>
+            <Text style={styles.txt}>Pay with Klasha</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.btnContainer} onPress={() => refRBSheet.current.open()}>
-            <Text style={styles.btnTxt}>Continue with Payment</Text>
+            <Text style={styles.btnTxt}>Continue to Payment</Text>
           </TouchableOpacity>
 
           <RBSheet

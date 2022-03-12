@@ -120,15 +120,16 @@ const styles = StyleSheet.create({
   row: {
     flexDirection: 'row',
     alignSelf: 'center',
-    marginTop: 12,
+    justifyContent: 'center',
+    alignContent: 'center'
   },
   txt: {
     color: Colors.white,
-    fontSize: 17,
+    fontSize: 18,
   },
   appleIcon: {
     marginLeft: 10,
-    marginRight: 5,
+    marginRight: 10,
   },
   klashContainer: {
     width: '100%',
@@ -146,20 +147,18 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     height: 18,
     width: 200,
-    marginTop: 30,
+    marginTop: 40,
   },
   footer: {
     flexDirection: 'row',
     alignSelf: 'center',
-    marginTop: 10,
+    marginTop: 5,
   },
   txt2: {
-    fontSize: 11,
-    color: Colors.grey
+    fontSize: 12,
   },
   txt3: {
-    fontSize: 11,
+    fontSize: 12,
     marginLeft: 10,
-    color: Colors.grey
   },
 });

@@ -7,6 +7,24 @@ import Colors from '../../common/Colors';
 import styles from './styles';
 import ImagesPath from '../../common/ImagesPath';
 import Axios from 'axios';
+import { FlatList } from 'react-native-gesture-handler';
+
+const staticList = [
+  {
+    id:1,
+    productName:'Nike Mercial Superfly 7 Elite Mbppe Rose FG',
+    price: '₦ 12,000.00',
+    description: 'Eligible for shopping To mars or someone else.',
+    rating: '4.05'
+  },
+  {
+    id:2,
+    productName:'Nike Mercial Superfly 7 Elite Mbppe Rose FG',
+    price: '₦ 13,000.00',
+    description: 'Eligible for shopping To mars or someone else.',
+    rating: '3.05'
+  }
+]
 
 function Home(props) {
   const ratingCompleted = () => {
@@ -41,48 +59,59 @@ function Home(props) {
   };
   return (
     <>
+    <View style={styles.container}>
+
+      {/* HEADER */}
+      <View style={styles.innerContainer}>
+      <SimpleHeader
+        onPressCart={() => props.navigation.navigate('Checkout')} />
+      </View>
       <ScrollView style={styles.container}>
         <View style={styles.innerContainer}>
-          {/* HEADER */}
-          <SimpleHeader
-            onPressCart={() => props.navigation.navigate('Checkout')}
-          />
-
           <Text style={styles.collectionName}>Nike Collections</Text>
-          <Image source={ImagesPath.shoe} style={styles.img} />
 
-          <Text style={styles.description}>
-            Nike Mercial Superfly 7 Elite Mbppe Rose FG
-          </Text>
-
-          <Text style={styles.price}>N 12,000.00</Text>
-
-          <Text style={styles.description}>
-            Eligible for shopping To mars or someone else.
-          </Text>
-
-          <View style={styles.box}>
-            <View style={styles.row}>
-              <Rating
-                imageSize={20}
-                onFinishRating={ratingCompleted()}
-                style={styles.rating}
-              />
-              <Text style={styles.ratingTxt}>4.05</Text>
-            </View>
-
-            <TouchableOpacity style={styles.addCartContainer}>
-              <AntDesign
-                name="shoppingcart"
-                size={24}
-                color={Colors.white}
-                style={styles.cartIcon}
-              />
-              <Text style={styles.cartTxt}>Add to Cart</Text>
-            </TouchableOpacity>
-          </View>
+          <FlatList
+                            data={staticList}
+                            style={{}}
+                            contentContainerStyle={{
+                              bottom: 20
+                            }}
+                            renderItem={({ item, index }) => (
+                              <View>
+                              <Image source={ImagesPath.shoe} style={styles.img} />
+                    
+                              <Text style={styles.description}>{item.productName}</Text>
+                    
+                              <Text style={styles.price}>{item.price}</Text>
+                    
+                              <Text style={styles.description}>{item.description}</Text>
+                              <View style={styles.box}>
+                                <View style={styles.row}>
+                                  <Rating
+                                    imageSize={15}
+                                    onFinishRating={ratingCompleted()}
+                                    style={styles.rating}
+                                  />
+                                  <Text style={styles.ratingTxt}>{item.rating}</Text>
+                                </View>
+                    
+                                <TouchableOpacity style={styles.addCartContainer}>
+                                  <AntDesign
+                                    name="shoppingcart"
+                                    size={24}
+                                    color={Colors.white}
+                                    style={styles.cartIcon}
+                                  />
+                                  <Text style={styles.cartTxt}>Add to Cart</Text>
+                                </TouchableOpacity>
+                              </View>
+                              </View>
+                            )}
+                            // keyExtractor={item => item.id}
+                        />
         </View>
       </ScrollView>
+    </View>
     </>
   );
 }

@@ -43,14 +43,15 @@ export default StyleSheet.create({
     fontSize: 16
   },
   change: {
-    color: 'red', 
+    color: Colors.red, 
     fontWeight: '500', 
     fontSize: 16
   },
   address: {
     width: '90%', 
     lineHeight: 20, 
-    marginTop: 6
+    marginTop: 6,
+    color: Colors.grey
   },
   heading: {
     color: Colors.black, 
@@ -79,15 +80,15 @@ export default StyleSheet.create({
   btnContainer: {
     width: '80%',
     height: 50,
-    backgroundColor: 'red',
+    backgroundColor: Colors.red,
     alignSelf: 'center',
     marginTop: 60,
+    justifyContent: 'center',
   },
   btnTxt: {
     alignSelf: 'center',
     color: Colors.white,
-    fontWeight: 'bold',
-    fontSize: 18,
-    marginTop: 10,
+    fontWeight: '500',
+    fontSize: 16,
   },
 });

@@ -14,7 +14,7 @@ export default StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 28,
     color: Colors.black,
-    marginTop: 40,
+    // marginTop: 5,
   },
   img: {
     width: '95%',
@@ -25,6 +25,8 @@ export default StyleSheet.create({
   description: {
     marginLeft: '3%',
     marginTop: 10,
+    color: Colors.grey,
+    fontSize: 12
   },
   price: {
     fontWeight: 'bold',
@@ -42,13 +44,14 @@ export default StyleSheet.create({
     flexDirection: 'row',
   },
   rating: {
-    paddingVertical: 10,
+    paddingVertical: 18,
   },
   ratingTxt: {
     color: Colors.black,
     alignSelf: 'center',
     fontWeight: 'bold',
     marginLeft: 5,
+    fontSize: 12
   },
   addCartContainer: {
     width: 150,
@@ -62,9 +65,13 @@ export default StyleSheet.create({
   },
   cartTxt: {
     color: Colors.white,
-    fontWeight: '600',
+    fontWeight: '500',
     alignSelf: 'center',
     fontSize: 18,
     marginLeft: 10,
+  },
+  logo: {
+    width: 40,
+    height: 40,
   },
 });

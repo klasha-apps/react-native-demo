@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Image, Text, TouchableOpacity, StyleSheet, Platform} from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Colors from '../../common/Colors';
-import ImagesPath from '../../common/ImagesPath';
+import ImagesPath from '../../src/common/ImagesPath';
 
 export default function SimpleHeader(props) {
   return (
@@ -13,7 +13,7 @@ export default function SimpleHeader(props) {
       </View>
       <View style={styles.flexRow}>
         <TouchableOpacity onPress={props.onPressCart}>
-          <AntDesign name="shoppingcart" size={20} style={styles.cartIcon} />
+          <AntDesign name="shoppingcart" size={24} style={styles.cartIcon} />
         </TouchableOpacity>
         <Text style={styles.cart}>Cart</Text>
         <View style={styles.badge}>
@@ -38,11 +38,10 @@ const styles = StyleSheet.create({
   logo: {
     width: 40,
     height: 40,
-    marginTop: 10
   },
   storeName: {
-    fontWeight: '500',
-    fontSize: 33,
+    fontWeight: 'bold',
+    fontSize: 22,
     alignSelf: 'center',
     marginLeft: 10,
   },
@@ -56,8 +55,7 @@ const styles = StyleSheet.create({
   cart: {
     margin: 5,
     marginTop: 6,
-    color: Colors.grey,
-    fontSize: 18
+    fontWeight: 'bold',
   },
   badge: {
     width: 20,
